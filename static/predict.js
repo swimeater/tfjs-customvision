@@ -37,7 +37,7 @@ $("#predict-button").click(async function () {
 		.resizeNearestNeighbor([224, 224]) // change the image size
 		.expandDims()
 		.toFloat()
-		.reverse(-1); // RGB -> BGR
+		.reverse(1); // RGB -> BGR
 	let predictions = await model.predict(tensor).data();
 	console.log(predictions);
 	let top5 = Array.from(predictions)
